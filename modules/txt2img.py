@@ -6,7 +6,6 @@ from modules.shared import opts, cmd_opts
 import modules.shared as shared
 import modules.processing as processing
 from modules.ui import plaintext_to_html
-import gradio as gr
 
 
 def txt2img(prompt: str, negative_prompt: str, prompt_style: str, prompt_style2: str, steps: int, sampler_index: int, restore_faces: bool, tiling: bool, n_iter: int, batch_size: int, cfg_scale: float, seed: int, subseed: int, subseed_strength: float, seed_resize_from_h: int, seed_resize_from_w: int, seed_enable_extras: bool, height: int, width: int, enable_hr: bool, denoising_strength: float, firstphase_width: int, firstphase_height: int, *args):
@@ -59,5 +58,5 @@ def txt2img(prompt: str, negative_prompt: str, prompt_style: str, prompt_style2:
 
     if opts.do_not_show_images:
         processed.images = []
-    gr.Interface.show("Your input is: " + p.sd_model)
+    print(generation_info_js)
     return processed.images, generation_info_js, plaintext_to_html(processed.info)
