@@ -59,5 +59,5 @@ def txt2img(prompt: str, negative_prompt: str, prompt_style: str, prompt_style2:
 
     if opts.do_not_show_images:
         processed.images = []
-    gr.Interface.show_input("Your input is: " + p.sd_model)
+    gr.Interface.show("Your input is: " + p.sd_model)
     return processed.images, generation_info_js, plaintext_to_html(processed.info)
